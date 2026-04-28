@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Supervised Learning: Linear Regression
 
 📁 USA Housing Price Prediction
@@ -98,8 +99,167 @@ Untuk memastikan model valid, dilakukan beberapa pengujian:
 ✅ Kesimpulan
 Model **Linear Regression** mampu memberikan prediksi harga rumah dengan akurasi tinggi dan dapat menjelaskan sebagian besar variasi dalam dataset.
 Namun, performa model masih dipengaruhi oleh keberadaan **outlier**. Untuk pengembangan selanjutnya, dapat dilakukan:
+=======
+## 📊 Supervised Learning – Classification (Iris Dataset)
 
-* Penanganan atau pembersihan outlier
-* Feature engineering untuk meningkatkan kualitas fitur
-* Penggunaan model yang lebih kompleks untuk perbandingan
+### 📌 Deskripsi Project
 
+Project ini bertujuan untuk mengimplementasikan algoritma **K-Nearest Neighbors (KNN)** dalam melakukan klasifikasi pada dataset Iris. Model digunakan untuk memprediksi spesies bunga Iris berdasarkan karakteristik fisiknya.
+
+Dataset yang digunakan adalah **Iris Dataset**, yang terdiri dari beberapa fitur numerik seperti panjang dan lebar sepal serta petal.
+
+---
+
+### 📂 Dataset
+
+* **Nama file**: iris.csv
+* **Jumlah data**: 150 sampel
+* **Jumlah fitur**: 4 fitur numerik
+
+---
+
+### 🔢 Fitur (Independent Variables)
+
+* Sepal Length (cm)
+* Sepal Width (cm)
+* Petal Length (cm)
+* Petal Width (cm)
+
+---
+
+### 🎯 Target (Dependent Variable)
+
+* Species:
+
+  * Setosa
+  * Versicolor
+  * Virginica
+
+---
+
+### ⚙️ Library yang Digunakan
+
+Project ini menggunakan beberapa library Python berikut:
+
+* pandas
+* numpy
+* matplotlib
+* seaborn
+* scikit-learn
+
+---
+
+### 🔍 Tahapan Project
+
+#### 1. Data Loading
+
+Dataset dimuat menggunakan library pandas:
+
+```python
+train = pd.read_csv('iris.csv')
+```
+
+#### 2. Exploratory Data Analysis (EDA)
+
+Analisis dilakukan untuk memahami karakteristik dan distribusi data, meliputi:
+
+* Informasi dataset (`info()`)
+* Statistik deskriptif (`describe()`)
+* Visualisasi data:
+
+  * Countplot untuk distribusi spesies
+  * Histogram Sepal Length
+  * Boxplot untuk melihat sebaran fitur
+
+---
+
+#### 3. Data Preprocessing
+
+Tahapan preprocessing meliputi:
+
+* Pengecekan missing values
+* Encoding label menggunakan **LabelEncoder**
+* Pembagian dataset:
+
+  * 70% data training
+  * 30% data testing
+
+---
+
+#### 4. Feature Scaling
+
+Karena algoritma KNN sensitif terhadap skala data, dilakukan normalisasi menggunakan **StandardScaler**:
+
+```python
+from sklearn.preprocessing import StandardScaler
+```
+
+---
+
+#### 5. Model Training (KNN)
+
+Model KNN dilatih menggunakan:
+
+```python
+from sklearn.neighbors import KNeighborsClassifier
+```
+
+Parameter default serta beberapa variasi parameter digunakan untuk membandingkan performa model.
+
+---
+
+#### 6. Hyperparameter Tuning
+
+Optimasi parameter dilakukan menggunakan **GridSearchCV** dengan parameter berikut:
+
+* `n_neighbors`: [3, 5, 7]
+* `weights`: ['uniform', 'distance']
+* `metric`: ['euclidean', 'manhattan']
+
+Evaluasi model dilakukan menggunakan beberapa metrik:
+
+* Accuracy
+* Precision
+* Recall
+* F1-Score
+
+---
+
+#### 7. Evaluasi Model
+
+Model dievaluasi menggunakan:
+
+* Accuracy Score
+* Confusion Matrix
+* Classification Report
+
+---
+
+### 📈 Hasil
+
+Model KNN menunjukkan performa yang sangat baik dalam mengklasifikasikan data Iris, dengan tingkat akurasi yang tinggi (mendekati 100%, tergantung pada parameter yang digunakan).
+
+Hasil terbaik diperoleh dari kombinasi parameter optimal yang dihasilkan oleh GridSearch.
+>>>>>>> 720a409 (update)
+
+---
+
+### 🔮 Prediksi Data Baru
+
+Model yang telah dilatih dapat digunakan untuk memprediksi data baru, contohnya:
+
+```python
+new_data = np.array([[5.1, 3.5, 1.4, 0.2]])
+prediction = best_model.predict(new_data)
+```
+
+Hasil prediksi akan berupa label spesies bunga Iris.
+
+---
+
+### 📁 Output
+
+Hasil proses GridSearch disimpan dalam file:
+**hasil_gridsearch_knn.xlsx**
+
+---
