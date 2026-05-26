@@ -7,7 +7,7 @@
 
 ---
 
-## 📋 Deskripsi Proyek
+## 📋 Deskripsi Project
 
 Proyek ini merupakan **Tugas Week 8** mata kuliah Robotika yang membahas implementasi algoritma **K-Means Clustering** sebagai metode *unsupervised learning* untuk mengelompokkan data kualitas wine berdasarkan fitur kimiawi, yaitu **alcohol** dan **volatile acidity**.
 
